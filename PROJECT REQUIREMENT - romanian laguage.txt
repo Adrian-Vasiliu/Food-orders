@@ -1,0 +1,37 @@
+Operatorii unei firme folosesc un soft pentru a gestiona comenzile.
+Operatorul are la dispozitie functionalitatile:
+1. Login. Dupa autentificarea cu success, sunt afisati toate comenzile:
+de tip Mancare(numeClient, adresaClient, listaPreparate, pretTotal) si Shopping(numeClient, adresaClient, listaCumparaturi, pretTotal, numeMagazin)
+Un client poate avea mai multe comenzi (adresele pot sa difere).
+
+2. Operare (dupa autentificarea cu success)
+Cautare dupa numeClient -> Se vor afisa toate informatiile comenzilor acelui client (indiferent de ce tip sunt)
+Adaugare. Operatorul poate introduce noi comenzi cu urmatorii validatori: o comanda trebuie sa aiba cel putin un produs in lista si pretTotal > 0;
+
+3. Logout
+
+Precizări:
+   1. la un moment dat, o singură persoană folosește aplicația (deci nu trebuie acces concurent)
+   2. Datele de intrare se vor stoca în fișiere text. La pornirea aplicației, entitățile din fișiere vor fi citite din fișier(e).
+   Modificările pe parcursul derulării aplicației se vor salva în aceste fișiere. Toate operațiile de citire și scriere se vor realiza folosind biblioteca iostream.
+   3. La pornirea aplicației utilizatorul poate alege tipul fișierului/fișierelor pe baza carora se vizualizeaza datele (CSV sau HTML,
+   aplicatia trebuie sa ofere posibilitatea lucrului cu ambele tipuri de fisiere). În funcție de acest tip ales de utilizator, salvarea datelor în fișier(e) se va face
+   respectând formatul corect. De ex., dacă avem o entitate Student(id, cnp, nume, medie) o linie dintr-un fișier csv ar putea conține atributele unei entiăți separate prin virgulă
+           – 2, 2800429010309, Ana, 9.80
+           – 9, 1860808010391, George, 9.90
+Implementarea acestei cerințe se va realiza folosind structuri polimorfice.
+   4. Se vor folosi excepții pentru semnalarea posibilelor erori. Pentru aceasta se vor defini și folosi clase de tip Excepție.
+   5. Se vor valida datele preluate în aplicație.
+   6. Se va crea diagrama UML a aplicației folosind un instrument specializat (de ex StarUML).
+
+Lab 8:
+– Live 5p (clasele entitate & teste, clasa Repo & teste) – doar un tip de fisier la alegere CSV sau HTML
+    – Folositi repo-ul cu template de la labul precendent. Daca e implementat corect, trebuie doar instantiat cu noua clasa entitate ca parametru T,
+	fara nicio modificare in codul claselor Repo si RepoFisier.
+    – Modelare: clasa Comanda este o clasa abstracta din care mostenesc Mancare si Shopping. Atributele comune se implemnenteaza in Comanda.
+
+– Tema, cu predare in lab10 – 5p
+    – Validare date (folosind exceptii). Validatorii se implementeaza in clase separate ce vor fi folosite in Service. + teste
+    – Functionalitatea de Login & Diagrama UML
+    – Celalalt tip de fisier
+	
